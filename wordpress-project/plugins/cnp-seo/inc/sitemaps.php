@@ -704,17 +704,57 @@ function output_news_sitemap() {
   echo $xml;
 }
 
-// Robots.txt integration
+// Enhanced Robots.txt integration for publisher sites
 add_action('do_robotstxt', function(){
   $opts = get_option('cnp_seo_settings', []);
 
+  // Publisher site identification
+  echo "\n# CNP News - Publisher Site\n";
+  echo "# Generated: " . gmdate('Y-m-d H:i:s') . " GMT\n\n";
+
+  // User-agent specific rules
+  echo "# Google News Bot\n";
+  echo "User-agent: Googlebot-News\n";
+  echo "Allow: /\n";
+  echo "Disallow: /wp-admin/\n";
+  echo "Disallow: /wp-includes/\n\n";
+
+  // General crawlers
+  echo "# General Crawlers\n";
+  echo "User-agent: *\n";
+  echo "Allow: /wp-content/uploads/\n";
+  echo "Disallow: /wp-admin/\n";
+  echo "Disallow: /wp-includes/\n";
+  echo "Disallow: /wp-content/plugins/\n";
+  echo "Disallow: /wp-content/themes/\n";
+  echo "Disallow: /wp-json/\n";
+  echo "Disallow: /xmlrpc.php\n";
+  echo "Disallow: /trackback/\n";
+  echo "Disallow: /?s=\n";
+  echo "Disallow: /search/\n";
+  echo "Disallow: /author/\n";
+  echo "Disallow: /users/\n";
+  echo "Disallow: *?replytocom=\n";
+  echo "Disallow: /feed/\n";
+  echo "Disallow: /comments/feed/\n";
+  echo "Crawl-delay: 1\n\n";
+
+  // Sitemaps
   if (!empty($opts['sitemaps_enabled'])) {
-    echo "\n# CNP SEO Sitemaps\n";
+    echo "# Sitemaps\n";
     echo "Sitemap: " . home_url('/sitemap.xml') . "\n";
 
     if (!empty($opts['news_sitemap_enabled'])) {
       echo "Sitemap: " . home_url('/news-sitemap.xml') . "\n";
     }
+    echo "\n";
+  }
+
+  // RSS Feeds (for discovery)
+  if (!empty($opts['gn_enabled'])) {
+    echo "# RSS Feeds\n";
+    echo "# Main feed: " . get_feed_link() . "\n";
+    echo "# News feed: " . home_url('/feed/news/') . "\n\n";
   }
 });
 

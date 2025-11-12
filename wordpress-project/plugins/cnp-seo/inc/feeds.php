@@ -191,6 +191,11 @@ function output_feed($args, $title, $description) {
   echo '<language>' . esc_html($opts['gn_publication_lang'] ?? 'en') . '</language>' . "\n";
   echo '<lastBuildDate>' . mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false) . '</lastBuildDate>' . "\n";
 
+  // WebSub/PubSubHubbub for real-time updates
+  $hub_url = 'https://pubsubhubbub.appspot.com/';
+  echo '<atom:link href="' . esc_url($hub_url) . '" rel="hub" xmlns:atom="http://www.w3.org/2005/Atom"/>' . "\n";
+  echo '<atom:link href="' . esc_url(get_feed_link()) . '" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>' . "\n";
+
   foreach ($posts as $post) {
     echo '<item>' . "\n";
     echo '<title>' . esc_html(wp_strip_all_tags(get_the_title($post))) . '</title>' . "\n";
@@ -466,3 +471,36 @@ function run_preflight_check($url) {
     'facts' => $facts,
   ];
 }
+
+/**
+ * Ping WebSub hub when new post is published
+ */
+function ping_websub_hub($post_id) {
+  // Only ping for published posts
+  if (get_post_status($post_id) !== 'publish') {
+    return;
+  }
+
+  // Only ping for posts, not pages or other post types
+  if (get_post_type($post_id) !== 'post') {
+    return;
+  }
+
+  $hub_url = 'https://pubsubhubbub.appspot.com/';
+  $feed_url = get_feed_link();
+
+  // Ping the hub
+  $response = wp_remote_post($hub_url, [
+    'body' => [
+      'hub.mode' => 'publish',
+      'hub.url' => $feed_url,
+    ],
+    'timeout' => 5,
+  ]);
+
+  // Log for debugging (optional)
+  if (is_wp_error($response)) {
+    error_log('WebSub ping failed: ' . $response->get_error_message());
+  }
+}
+add_action('publish_post', __NAMESPACE__ . '\\ping_websub_hub');

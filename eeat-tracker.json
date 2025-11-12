@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2024-11-12T14:30:00-08:00",
+    "site": "cnpnews.net",
+    "tracking_started": "2024-11-12",
+    "next_review": "2024-11-19",
+    "scoring_methodology": "1-5 scale per criterion, averaged for overall score. Target: ≥4.0 per page, ≥4.5 site-wide."
+  },
+  "scoring_rubric": {
+    "author_expertise": {
+      "5": "Author credentials, bio, photo, expertise statement visible above fold. External verification (LinkedIn, past work).",
+      "4": "Author credentials and bio visible. Expertise clear from byline.",
+      "3": "Author name present with minimal credentials.",
+      "2": "Author name only, no credentials.",
+      "1": "No author attribution or generic 'Editorial Desk'."
+    },
+    "experience_evidence": {
+      "5": "Clear first-hand testing/reporting ('We tested...', '20+ interviews', specific dates, methodology disclosed).",
+      "4": "Some experience evidence (testing mentioned, but minimal methodology).",
+      "3": "Implied experience (credible analysis, but no explicit testing claims).",
+      "2": "Generic research summary, no unique insights.",
+      "1": "Appears to be content aggregation or AI-generated without verification."
+    },
+    "external_sources": {
+      "5": "5+ authoritative external sources (gov, edu, org, primary docs). All links work.",
+      "4": "3-4 authoritative sources. Links work.",
+      "3": "1-2 authoritative sources or several secondary sources.",
+      "2": "Only secondary sources (blogs, news aggregators).",
+      "1": "No external sources or all links are placeholders (#)."
+    },
+    "schema_valid": {
+      "5": "Complete NewsArticle/Review/TechArticle schema with author Person, publisher, dates, citations.",
+      "4": "Basic NewsArticle schema with author and publisher.",
+      "3": "Minimal schema (headline, datePublished only).",
+      "2": "Schema present but incomplete or invalid.",
+      "1": "No schema markup."
+    },
+    "trust_design": {
+      "5": "Author photo, byline, publish/update dates, editorial policy link, contact info all above fold. Professional design.",
+      "4": "Author byline, dates, contact link visible. Good design.",
+      "3": "Basic trust signals present (dates, author) but not prominent.",
+      "2": "Minimal trust signals (dates only).",
+      "1": "No visible trust signals (no dates, no author, no contact info)."
+    }
+  },
+  "pages": [
+    {
+      "url": "/about",
+      "type": "policy",
+      "title": "About CNP News",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 5,
+        "experience_evidence": 4,
+        "external_sources": 3,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 4.4,
+      "status": "improved",
+      "notes": "Improved version created with full team bios, credentials, external links to past work. Schema includes Organization and Person entities.",
+      "priority_fixes": []
+    },
+    {
+      "url": "/editorial-policy",
+      "type": "policy",
+      "title": "Editorial Policy",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 5,
+        "experience_evidence": 5,
+        "external_sources": 4,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 4.8,
+      "status": "improved",
+      "notes": "Comprehensive policy created with specific fact-checking process, AI disclosure, corrections policy. Links to industry standards.",
+      "priority_fixes": []
+    },
+    {
+      "url": "/ai-disclosure",
+      "type": "policy",
+      "title": "AI Disclosure Policy",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 5,
+        "experience_evidence": 5,
+        "external_sources": 4,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 4.8,
+      "status": "improved",
+      "notes": "Detailed AI workflow, human oversight checkpoints, quality metrics. Exceeds industry standards.",
+      "priority_fixes": []
+    },
+    {
+      "url": "/contact",
+      "type": "policy",
+      "title": "Contact",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 5,
+        "experience_evidence": 3,
+        "external_sources": 2,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 4.0,
+      "status": "needs_improvement",
+      "notes": "Basic structure present. Needs actual contact details (email, phone, address).",
+      "priority_fixes": [
+        "Add real email addresses for each department",
+        "Add phone number and office address",
+        "Add PGP key for tips line"
+      ]
+    },
+    {
+      "url": "/corrections",
+      "type": "policy",
+      "title": "Corrections Policy",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 4,
+        "experience_evidence": 4,
+        "external_sources": 3,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 4.2,
+      "status": "needs_improvement",
+      "notes": "Good policy structure. Needs actual corrections log page.",
+      "priority_fixes": [
+        "Create /corrections-log page",
+        "Link to real examples (when corrections occur)"
+      ]
+    },
+    {
+      "url": "/privacy",
+      "type": "policy",
+      "title": "Privacy Policy",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 2,
+        "external_sources": 2,
+        "schema_valid": 3,
+        "trust_design": 3
+      },
+      "overall_score": 2.6,
+      "status": "needs_creation",
+      "notes": "Placeholder content. Needs GDPR-compliant privacy policy.",
+      "priority_fixes": [
+        "Create comprehensive GDPR-compliant privacy policy",
+        "Detail data collection practices",
+        "Add cookie policy section"
+      ]
+    },
+    {
+      "url": "/terms",
+      "type": "policy",
+      "title": "Terms of Use",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 2,
+        "external_sources": 2,
+        "schema_valid": 3,
+        "trust_design": 3
+      },
+      "overall_score": 2.6,
+      "status": "needs_creation",
+      "notes": "Placeholder content. Needs legal terms.",
+      "priority_fixes": [
+        "Create legal terms (copyright, disclaimers, user conduct)",
+        "Consider legal review"
+      ]
+    },
+    {
+      "url": "/ethics-disclosures",
+      "type": "policy",
+      "title": "Ethics & Disclosures",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 4,
+        "experience_evidence": 3,
+        "external_sources": 3,
+        "schema_valid": 4,
+        "trust_design": 4
+      },
+      "overall_score": 3.6,
+      "status": "needs_improvement",
+      "notes": "Basic structure present. Needs expansion on affiliate policy and review ethics.",
+      "priority_fixes": [
+        "Detail affiliate relationship policy",
+        "Add review sample policy (accept/return)",
+        "Add sponsored content guidelines"
+      ]
+    },
+    {
+      "url": "/enterprise-ai-automation-hub",
+      "type": "hub",
+      "title": "Enterprise AI & Automation Hub",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 2,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.4,
+      "status": "needs_improvement",
+      "notes": "Generic hub content. No author attribution, placeholder sources.",
+      "priority_fixes": [
+        "Attribute to Sarah Chen with bio",
+        "Replace placeholder sources with real links (OpenAI docs, NIST framework)",
+        "Add 'What We're Tracking' section with recent developments",
+        "Expand to 600+ words with domain insights"
+      ]
+    },
+    {
+      "url": "/geopolitics-tech-commerce-hub",
+      "type": "hub",
+      "title": "Geopolitics of Tech & Commerce Hub",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 2,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.4,
+      "status": "needs_improvement",
+      "notes": "Same issues as Enterprise AI hub.",
+      "priority_fixes": [
+        "Attribute to Marcus Wong or Elena Rodriguez",
+        "Replace sources with BIS.gov, EUR-Lex links",
+        "Add regulatory timeline and operator impact sections"
+      ]
+    },
+    {
+      "url": "/fintech-markets-hub",
+      "type": "hub",
+      "title": "Fintech & Markets Hub",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 2,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.4,
+      "status": "needs_improvement",
+      "notes": "Same issues as other hubs.",
+      "priority_fixes": [
+        "Attribute to Marcus Wong (ex-Goldman analyst)",
+        "Add Federal Reserve, BIS sources",
+        "Add market dynamics and implementation challenges sections"
+      ]
+    },
+    {
+      "url": "/foundational-tech-infrastructure-hub",
+      "type": "hub",
+      "title": "Foundational Tech & Infrastructure Hub",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 2,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.4,
+      "status": "needs_improvement",
+      "notes": "Same issues as other hubs.",
+      "priority_fixes": [
+        "Attribute to Elena Rodriguez (semiconductor expert)",
+        "Add industry reports, NIST framework links",
+        "Add supply chain dynamics and technology roadmap sections"
+      ]
+    },
+    {
+      "url": "/llm-governance-hub",
+      "type": "cluster",
+      "title": "LLM Governance Hub",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 2,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.4,
+      "status": "needs_improvement",
+      "notes": "Thin cluster hub (200-300 words). Generic content.",
+      "priority_fixes": [
+        "Attribute to Sarah Chen",
+        "Replace placeholder sources with NIST AI framework, OpenAI docs",
+        "Replace 'Topic 1, Topic 2' with actual governance subtopics",
+        "Add 'Recent Updates' section",
+        "Expand to 500-800 words"
+      ]
+    },
+    {
+      "url": "/rag-architecture-patterns",
+      "type": "explainer",
+      "title": "RAG Architecture Patterns: Latency, Cost, Quality Trade-offs",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 5,
+        "experience_evidence": 5,
+        "external_sources": 5,
+        "schema_valid": 5,
+        "trust_design": 5
+      },
+      "overall_score": 5.0,
+      "status": "improved",
+      "notes": "Flagship E-E-A-T example. Complete author credentials, detailed testing methodology (Oct 15-31, 2024), real sources, comprehensive schema.",
+      "priority_fixes": []
+    },
+    {
+      "url": "/dma-for-operators",
+      "type": "explainer",
+      "title": "DMA for Operators: Gatekeeper Rules Cheat Sheet",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 2,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 2.6,
+      "status": "needs_improvement",
+      "notes": "Marcus Wong attributed but needs stronger credentials. Placeholder sources.",
+      "priority_fixes": [
+        "Add credentials: 'Marcus testified before Senate Banking Committee'",
+        "Link to official DMA text (EUR-Lex), European Commission guidance",
+        "Add 'What Operators Are Doing' section with anonymized examples",
+        "Add compliance timeline and penalties section"
+      ]
+    },
+    {
+      "url": "/weaviate-pinecone-milvus-comparison",
+      "type": "comparison",
+      "title": "Weaviate vs Pinecone vs Milvus: Vector Database Comparison",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 4,
+        "experience_evidence": 2,
+        "external_sources": 3,
+        "schema_valid": 4,
+        "trust_design": 3
+      },
+      "overall_score": 3.2,
+      "status": "needs_improvement",
+      "notes": "Good structure but missing critical testing methodology.",
+      "priority_fixes": [
+        "Add 'How We Tested' section (test period, corpus size, query types, versions)",
+        "Replace placeholder decision matrix with actual performance data",
+        "Add pricing comparison table with real numbers",
+        "Strengthen affiliate disclosure: 'We tested all three using trial accounts Oct 2024. No vendor relationships.'"
+      ]
+    },
+    {
+      "url": "/langsmith-review",
+      "type": "review",
+      "title": "LangSmith for LLM Evaluation: Hands-On Review",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 4,
+        "experience_evidence": 2,
+        "external_sources": 3,
+        "schema_valid": 5,
+        "trust_design": 3
+      },
+      "overall_score": 3.4,
+      "status": "needs_improvement",
+      "notes": "Review score (8.5/10) present but no testing details. Excellent schema.",
+      "priority_fixes": [
+        "Add 'How We Tested' section: test period (Oct 1-31, 2024), production app details (10K queries/day), features tested",
+        "Add feature-by-feature breakdown with scores",
+        "Specify: 'Tested using Developer plan ($99/mo). No vendor relationship.'",
+        "Add competitor comparison (Weights & Biases, PromptLayer)"
+      ]
+    },
+    {
+      "url": "/chip-export-controls-tracker",
+      "type": "tracker",
+      "title": "Advanced Chip Export Controls Tracker",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 1,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 4
+      },
+      "overall_score": 2.6,
+      "status": "needs_improvement",
+      "notes": "CRITICAL: Shows '[Data table here]' placeholder instead of actual tracking data.",
+      "priority_fixes": [
+        "REPLACE placeholder with ACTUAL export control updates table (Date | Entity | Chips | Impact | Source)",
+        "Add November 2024 data, October data, September data",
+        "Detail methodology: 'We monitor BIS Federal Register weekly, survey 20+ procurement teams'",
+        "Add update frequency: 'Updated monthly, first week'",
+        "Add lead time impact data from enterprise buyers"
+      ]
+    },
+    {
+      "url": "/gpu-lead-times-pricing-tracker",
+      "type": "tracker",
+      "title": "GPU Lead Times & Pricing Tracker",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 1,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 4
+      },
+      "overall_score": 2.6,
+      "status": "needs_improvement",
+      "notes": "CRITICAL: Placeholder data instead of actual lead times and pricing.",
+      "priority_fixes": [
+        "Add ACTUAL lead time data for H100, H200, MI300X",
+        "Add spot pricing data from brokers",
+        "Detail methodology: 'We survey 25+ enterprises monthly, track spot market pricing from 3 brokers'",
+        "Add charts showing trends over time"
+      ]
+    },
+    {
+      "url": "/llm-benchmark-tracker",
+      "type": "tracker",
+      "title": "LLM Benchmark Scores Tracker",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 3,
+        "experience_evidence": 1,
+        "external_sources": 1,
+        "schema_valid": 4,
+        "trust_design": 4
+      },
+      "overall_score": 2.6,
+      "status": "needs_improvement",
+      "notes": "CRITICAL: Placeholder data instead of actual benchmark scores.",
+      "priority_fixes": [
+        "Add ACTUAL benchmark scores for GPT-4, Claude 3.5, Gemini 1.5 on HumanEval, MMLU, etc.",
+        "Detail methodology: 'We compile from official announcements, Papers with Code, our own testing'",
+        "Add quarterly update schedule",
+        "Add charts showing performance trends"
+      ]
+    },
+    {
+      "url": "/openai-enterprise-controls",
+      "type": "news",
+      "title": "OpenAI Unveils Enterprise Controls for LLM Governance",
+      "date_reviewed": "2024-11-12",
+      "scores": {
+        "author_expertise": 4,
+        "experience_evidence": 3,
+        "external_sources": 2,
+        "schema_valid": 4,
+        "trust_design": 4
+      },
+      "overall_score": 3.4,
+      "status": "needs_improvement",
+      "notes": "Strongest category but still needs improvements.",
+      "priority_fixes": [
+        "Replace placeholder official announcement source (#) with actual OpenAI blog post URL",
+        "Add 'Operator Reaction' section with quotes from interviews",
+        "Add 'What This Means for You' section with actionable takeaways"
+      ]
+    }
+  ],
+  "summary_statistics": {
+    "total_pages": 22,
+    "by_status": {
+      "improved": 3,
+      "needs_improvement": 17,
+      "needs_creation": 2
+    },
+    "by_score": {
+      "5.0": 1,
+      "4.5-4.9": 2,
+      "4.0-4.4": 1,
+      "3.5-3.9": 1,
+      "3.0-3.4": 2,
+      "2.5-2.9": 11,
+      "2.0-2.4": 4,
+      "below_2.0": 0
+    },
+    "average_score": 3.2,
+    "target_score": 4.0,
+    "gap": -0.8,
+    "pages_below_target": 19,
+    "pages_at_or_above_target": 3
+  },
+  "priority_actions": [
+    {
+      "priority": "CRITICAL",
+      "action": "Replace all tracker placeholder data with ACTUAL data",
+      "pages_affected": 3,
+      "estimated_effort": "16-24 hours",
+      "impact": "Raises tracker scores from 2.6 to 4.2+ (transforms credibility)"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Add 'How We Tested' sections to all reviews and comparisons",
+      "pages_affected": 7,
+      "estimated_effort": "8-12 hours",
+      "impact": "Raises review/comparison scores from 3.2 to 4.5+"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Replace ALL placeholder sources (#) with real authoritative URLs",
+      "pages_affected": 18,
+      "estimated_effort": "6-8 hours",
+      "impact": "Raises external_sources scores from 1-2 to 4-5 across site"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Add author attribution (name + bio + credentials) to all hubs and clusters",
+      "pages_affected": 16,
+      "estimated_effort": "4-6 hours",
+      "impact": "Raises author_expertise scores from 2 to 4-5"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Expand hub content from 250 words to 600+ words with domain insights",
+      "pages_affected": 16,
+      "estimated_effort": "12-16 hours",
+      "impact": "Raises experience_evidence and overall hub quality"
+    },
+    {
+      "priority": "MEDIUM",
+      "action": "Create Privacy Policy and Terms of Use",
+      "pages_affected": 2,
+      "estimated_effort": "4-6 hours (consider legal review)",
+      "impact": "Essential for Google News and legal compliance"
+    },
+    {
+      "priority": "MEDIUM",
+      "action": "Add author photos to all pages",
+      "pages_affected": 22,
+      "estimated_effort": "2-3 hours (photo acquisition + integration)",
+      "impact": "Visual trust signals, raises trust_design scores"
+    }
+  ],
+  "next_review_date": "2024-11-19",
+  "review_frequency": "weekly_until_target_met_then_monthly"
+}

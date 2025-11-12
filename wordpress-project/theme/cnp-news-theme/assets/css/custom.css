@@ -1,0 +1,381 @@
+/**
+ * CNP News Theme - Custom Enhancements
+ *
+ * Quality improvements for premium feel, trust signals, and performance
+ * Focus: Article polish, spacing normalization, accessibility
+ *
+ * @package CNP_News
+ * @version 1.0.1
+ */
+
+/* ==========================================================================
+   ARTICLE POLISH - Hero & Trust Signals
+   ========================================================================== */
+
+/* Hero media wrapper ensures proper spacing */
+.cnp-hero-media {
+    display: block;
+    position: relative;
+}
+
+/* Featured image preload hint for LCP */
+.cnp-featured-image img {
+    content-visibility: auto;
+}
+
+/* Image caption/credit styling */
+.cnp-image-caption {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: var(--wp--preset--color--muted);
+}
+
+.cnp-image-caption:empty {
+    display: none;
+}
+
+/* ==========================================================================
+   HEADER WEIGHT REDUCTION - Single Posts
+   ========================================================================== */
+
+/* Lighten header on article pages to let H1 win */
+.single-post-article .cnp-header-wrapper {
+    border-bottom-width: 1px;
+    box-shadow: none;
+}
+
+/* Reduce header padding on articles */
+.single-post-article .cnp-nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Remove sticky on small screens for articles */
+@media (max-width: 768px) {
+    .single-post-article .cnp-header-wrapper {
+        position: static !important;
+    }
+}
+
+/* ==========================================================================
+   SPACING NORMALIZATION - Vertical Rhythm
+   ========================================================================== */
+
+/* Consistent section spacing */
+.cnp-article-footer,
+.cnp-author-bio,
+.cnp-related-posts {
+    margin-top: var(--wp--preset--spacing--4xl);
+    padding-top: var(--wp--preset--spacing--2xl);
+    border-top: 1px solid var(--wp--preset--color--border);
+}
+
+/* Callout blocks (Key Takeaways, Why This Matters) */
+.cnp-callout {
+    margin-top: var(--wp--preset--spacing--2xl);
+    margin-bottom: var(--wp--preset--spacing--2xl);
+}
+
+/* Newsletter CTA spacing */
+.cnp-newsletter {
+    margin-top: var(--wp--preset--spacing--4xl);
+    margin-bottom: var(--wp--preset--spacing--4xl);
+}
+
+/* Ensure only one newsletter per page */
+.cnp-newsletter:not(:first-of-type) {
+    display: none !important;
+}
+
+/* ==========================================================================
+   AUTHOR CARD - Conditional Display
+   ========================================================================== */
+
+/* Hide author card if bio is empty */
+.cnp-author-bio[data-has-bio="false"] {
+    display: none !important;
+}
+
+/* Author card hover state */
+.cnp-author-avatar img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 50%;
+}
+
+.cnp-author-card:hover .cnp-author-avatar img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   IMAGE ASPECT RATIOS & CLS PREVENTION
+   ========================================================================== */
+
+/* Ensure stable aspect ratios */
+.cnp-featured-image img,
+.cnp-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent CLS on images */
+.cnp-featured-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.cnp-featured-image::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.cnp-featured-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card images - 4:3 aspect ratio */
+.cnp-related-card .wp-block-post-featured-image::before {
+    padding-top: 75%; /* 4:3 aspect ratio */
+}
+
+/* ==========================================================================
+   ACCESSIBILITY - Focus States & ARIA
+   ========================================================================== */
+
+/* Visible focus states for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Skip link - visible on focus */
+.cnp-skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--wp--preset--color--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+    transition: top 0.2s ease;
+}
+
+.cnp-skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--wp--preset--color--accent);
+    outline-offset: 2px;
+}
+
+/* Ensure AA contrast for muted text */
+.has-muted-color {
+    color: #6b7280;
+}
+
+[data-theme="dark"] .has-muted-color {
+    color: #9ca3af;
+}
+
+/* Theme toggle button accessibility */
+.cnp-theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    color: var(--wp--preset--color--foreground);
+}
+
+.cnp-theme-toggle:hover {
+    background-color: var(--wp--preset--color--surface);
+}
+
+.cnp-theme-toggle:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   CARD HOVER STATES - Smooth Interactions
+   ========================================================================== */
+
+.cnp-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cnp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cnp-card-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cnp-card:hover .cnp-card-title a {
+    color: var(--wp--preset--color--primary);
+}
+
+/* ==========================================================================
+   BYLINE CLEANUP - Single Line Format
+   ========================================================================== */
+
+.cnp-article-meta {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.cnp-meta-separator {
+    margin: 0 !important;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   DISCLOSURE BLOCKS - Trust Signals
+   ========================================================================== */
+
+.cnp-ai-disclosure,
+.cnp-affiliate-disclosure {
+    border-left: 3px solid var(--wp--preset--color--warning);
+    padding: 1rem 1.25rem;
+    background: var(--wp--preset--color--surface);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: var(--wp--preset--spacing--lg) 0;
+}
+
+.cnp-ai-disclosure strong,
+.cnp-affiliate-disclosure strong {
+    color: var(--wp--preset--color--foreground);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   DARK MODE - Ensure Parity
+   ========================================================================== */
+
+[data-theme="dark"] {
+    --wp--preset--color--background: #121212;
+    --wp--preset--color--surface: #1e1e1e;
+    --wp--preset--color--foreground: #e0e0e0;
+    --wp--preset--color--muted: #9ca3af;
+    --wp--preset--color--border: #2a2a2a;
+}
+
+[data-theme="dark"] .cnp-header-wrapper {
+    background-color: var(--wp--preset--color--background);
+    border-bottom-color: var(--wp--preset--color--border);
+}
+
+[data-theme="dark"] .cnp-card {
+    background-color: var(--wp--preset--color--surface);
+}
+
+[data-theme="dark"] .cnp-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtle borders in dark mode */
+[data-theme="dark"] .cnp-article-footer,
+[data-theme="dark"] .cnp-author-bio,
+[data-theme="dark"] .cnp-related-posts {
+    border-top-color: var(--wp--preset--color--border);
+}
+
+/* ==========================================================================
+   PERFORMANCE & CWV OPTIMIZATIONS
+   ========================================================================== */
+
+/* Reduce paint area for non-visible sections */
+.cnp-related-posts {
+    contain: layout style paint;
+}
+
+/* Optimize image loading */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Prevent layout shift on lazy images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Reduce spacing on mobile */
+    .cnp-article-header {
+        gap: var(--wp--preset--spacing--md);
+    }
+
+    /* Single column cards on mobile */
+    .cnp-related-posts .wp-block-post-template {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Full-width images on mobile */
+    .cnp-featured-image {
+        border-radius: 0 !important;
+        margin-left: calc(var(--wp--preset--spacing--md) * -1);
+        margin-right: calc(var(--wp--preset--spacing--md) * -1);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce spacing on small screens */
+    .cnp-callout,
+    .cnp-newsletter {
+        margin-top: var(--wp--preset--spacing--xl);
+        margin-bottom: var(--wp--preset--spacing--xl);
+    }
+}
+
+/* ==========================================================================
+   PRINT STYLES - Ensure Clean Printing
+   ========================================================================== */
+
+@media print {
+    .cnp-skip-link,
+    .cnp-header-wrapper,
+    .cnp-footer-wrapper,
+    .cnp-related-posts,
+    .cnp-newsletter {
+        display: none !important;
+    }
+
+    .cnp-article-content {
+        max-width: 100%;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}

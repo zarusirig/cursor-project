@@ -12,16 +12,30 @@
         
         <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|lg","margin":{"bottom":"var:preset|spacing|2xl"}}},"className":"cnp-article-header"} -->
         <div class="wp-block-group cnp-article-header" style="gap:var(--wp--preset--spacing--lg);margin-bottom:var(--wp--preset--spacing--2xl)">
-            
-            <!-- wp:post-terms {"term":"category","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|sm"}}},"className":"cnp-article-category"} -->
-            <div class="wp-block-post-terms cnp-article-category" style="margin-bottom:var(--wp--preset--spacing--sm)">
+
+            <!-- wp:post-terms {"term":"category","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|md"}}},"className":"cnp-article-category"} -->
+            <div class="wp-block-post-terms cnp-article-category" style="margin-bottom:var(--wp--preset--spacing--md)">
                 <!-- Category terms will be displayed here -->
             </div>
             <!-- /wp:post-terms -->
 
-            <!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}},"className":"cnp-article-title"} /-->
+            <!-- wp:group {"className":"cnp-hero-media"} -->
+            <div class="wp-block-group cnp-hero-media">
 
-            <!-- wp:post-featured-image {"isLink":false,"aspectRatio":"16/9","style":{"border":{"radius":"8px"},"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}},"className":"cnp-featured-image"} /-->
+                <!-- wp:post-featured-image {"isLink":false,"aspectRatio":"16/9","width":"","height":"","style":{"border":{"radius":"8px"},"spacing":{"margin":{"bottom":"var:preset|spacing|xs"}}},"className":"cnp-featured-image"} /-->
+
+                <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"},"blockGap":"var:preset|spacing|xs"}},"className":"cnp-image-meta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+                <div class="wp-block-group cnp-image-meta" style="gap:var(--wp--preset--spacing--xs);margin-bottom:var(--wp--preset--spacing--lg)">
+                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem","lineHeight":"1.4"}},"textColor":"muted","className":"cnp-image-caption"} -->
+                    <p class="cnp-image-caption has-muted-color has-text-color" style="font-size:0.8125rem;line-height:1.4"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}},"className":"cnp-article-title"} /-->
 
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|sm","margin":{"bottom":"var:preset|spacing|lg"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"},"className":"cnp-article-meta"} -->
             <div class="wp-block-group cnp-article-meta" style="gap:var(--wp--preset--spacing--sm);margin-bottom:var(--wp--preset--spacing--lg)">

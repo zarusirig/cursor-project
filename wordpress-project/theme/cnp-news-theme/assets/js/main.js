@@ -26,6 +26,9 @@
             this.newsletterForms();
             this.scrollToTop();
             this.analyticsTracking();
+            this.populateImageCaption();
+            this.conditionalAuthorCard();
+            this.enforceNewsletterLimit();
         },
         
         // Dark mode toggle functionality
@@ -533,7 +536,61 @@
                 }, 5000);
             }
         },
-        
+
+        // Populate image caption from featured image metadata
+        populateImageCaption: function() {
+            if (!document.body.classList.contains('single-post-article')) return;
+
+            const captionElement = document.querySelector('.cnp-image-caption');
+            const featuredImage = document.querySelector('.cnp-featured-image img');
+
+            if (!captionElement || !featuredImage) return;
+
+            // Try to get caption from WordPress image data
+            const imageCaption = featuredImage.getAttribute('data-caption') ||
+                                featuredImage.getAttribute('alt');
+
+            if (imageCaption && imageCaption.trim()) {
+                captionElement.textContent = imageCaption.trim();
+                captionElement.style.display = 'block';
+            } else {
+                captionElement.style.display = 'none';
+            }
+        },
+
+        // Conditionally show/hide author card based on bio presence
+        conditionalAuthorCard: function() {
+            if (!document.body.classList.contains('single-post-article')) return;
+
+            const authorBio = document.querySelector('.cnp-author-bio');
+            const authorBioText = document.querySelector('.wp-block-post-author-biography');
+
+            if (!authorBio) return;
+
+            // Check if bio text exists and has content
+            if (!authorBioText || !authorBioText.textContent.trim()) {
+                authorBio.setAttribute('data-has-bio', 'false');
+            } else {
+                authorBio.setAttribute('data-has-bio', 'true');
+            }
+        },
+
+        // Enforce only one newsletter per page
+        enforceNewsletterLimit: function() {
+            const newsletters = document.querySelectorAll('.cnp-newsletter');
+
+            if (newsletters.length <= 1) return;
+
+            // Keep only the first newsletter (usually in footer)
+            // Hide all others that might be in content
+            newsletters.forEach((newsletter, index) => {
+                if (index > 0) {
+                    newsletter.style.display = 'none';
+                    newsletter.setAttribute('aria-hidden', 'true');
+                }
+            });
+        },
+
         // Utility functions
         throttle: function(func, limit) {
             let inThrottle;

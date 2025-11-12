@@ -1,0 +1,88 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"2rem","bottom":"4rem"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:2rem;padding-bottom:4rem">
+  
+  <!-- Search Header -->
+  <!-- wp:group {"className":"search-header","style":{"spacing":{"padding":{"bottom":"2rem","top":"1rem"},"margin":{"bottom":"2rem"}}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group search-header" style="margin-bottom:2rem;padding-top:1rem;padding-bottom:2rem">
+    <!-- wp:query-title {"type":"search","level":1,"className":"search-title"} /-->
+    
+    <!-- wp:search {"label":"Search again","showLabel":false,"placeholder":"Search CNP News...","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"8px"}}} /-->
+  </div>
+  <!-- /wp:group -->
+  
+  <!-- Search Results -->
+  <!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"relevance","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template {"className":"search-results"} -->
+      <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"},"margin":{"bottom":"1.5rem"}},"border":{"bottom":{"width":"1px","color":"var(--wp--preset--color--border)"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+      <div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;margin-bottom:1.5rem;padding-top:1.5rem;padding-bottom:1.5rem">
+        <!-- wp:post-featured-image {"isLink":true,"width":"150px","height":"100px","style":{"border":{"radius":"8px"}}} /-->
+        
+        <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group">
+          <!-- wp:post-terms {"term":"category","className":"category-badge-sm"} /-->
+          <!-- wp:post-title {"isLink":true,"level":3,"className":"search-result-title"} /-->
+          <!-- wp:post-excerpt {"excerptLength":30} /-->
+          <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+          <div class="wp-block-group">
+            <!-- wp:post-author {"showAvatar":false,"fontSize":"small"} /-->
+            <!-- wp:post-date {"format":"M j, Y","fontSize":"small"} /-->
+          </div>
+          <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+    
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-query-pagination">
+      <!-- wp:query-pagination-previous {"label":"← Previous"} /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next {"label":"Next →"} /-->
+    </div>
+    <!-- /wp:query-pagination -->
+    
+    <!-- wp:query-no-results -->
+      <!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}},"layout":{"type":"constrained","contentSize":"600px"}} -->
+      <div class="wp-block-group" style="padding-top:4rem;padding-bottom:4rem">
+        <!-- wp:heading {"textAlign":"center","level":2} -->
+        <h2 class="wp-block-heading has-text-align-center">No results found</h2>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"align":"center"} -->
+        <p class="has-text-align-center">Sorry, no posts matched your search. Try different keywords or browse our categories.</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:search {"label":"Try again","showLabel":false,"placeholder":"Search CNP News...","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"8px"}}} /-->
+        
+        <!-- wp:spacer {"height":"2rem"} -->
+        <div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+        <!-- /wp:spacer -->
+        
+        <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"medium"} -->
+        <h3 class="wp-block-heading has-text-align-center has-medium-font-size">Browse Categories</h3>
+        <!-- /wp:heading -->
+        
+        <!-- wp:categories {"showPostCounts":true,"className":"category-list"} /-->
+        
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons">
+          <!-- wp:button -->
+          <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/">← Back to Home</a></div>
+          <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:query-no-results -->
+  </div>
+  <!-- /wp:query -->
+  
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+

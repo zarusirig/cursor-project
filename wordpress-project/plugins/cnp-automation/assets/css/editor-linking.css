@@ -1,0 +1,20 @@
+/* CNP Automation Linking - Editor Styles */
+#cnp-linking-metabox .spinner {
+  float: none;
+  margin: 0 auto;
+}
+
+#cnp-linking-metabox .cnp-link-checkbox {
+  margin-right: 8px;
+}
+
+#cnp-linking-metabox .cnp-anchor-select {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+#cnp-linking-results {
+  margin-top: 12px;
+}
+
+/* Block editor styles would go here */

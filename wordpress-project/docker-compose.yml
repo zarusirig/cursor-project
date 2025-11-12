@@ -1,0 +1,73 @@
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: cnp-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cnpnews_wp
+      MYSQL_USER: cnpnews
+      MYSQL_PASSWORD: cnpnews_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cnp-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # WordPress
+  wordpress:
+    image: wordpress:6.4-php8.2-apache
+    container_name: cnp-wordpress
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: cnpnews_wp
+      WORDPRESS_DB_USER: cnpnews
+      WORDPRESS_DB_PASSWORD: cnpnews_password
+      WORDPRESS_TABLE_PREFIX: cnp_
+      WORDPRESS_DEBUG: 'true'
+      WORDPRESS_DEBUG_LOG: /var/www/html/wp-content/debug.log
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./theme/cnp-news-theme:/var/www/html/wp-content/themes/cnp-news-theme
+      - ./plugins/cnp-seo:/var/www/html/wp-content/plugins/cnp-seo
+      - ./plugins/cnp-automation:/var/www/html/wp-content/plugins/cnp-automation
+      - ./wordpress-setup.sh:/docker-entrypoint-init.d/wordpress-setup.sh
+    networks:
+      - cnp-network
+    restart: unless-stopped
+
+  # phpMyAdmin for database management
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: cnp-phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: cnpnews
+      PMA_PASSWORD: cnpnews_password
+      PMA_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8080:80"
+    networks:
+      - cnp-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  wordpress_data:
+
+networks:
+  cnp-network:
+    driver: bridge

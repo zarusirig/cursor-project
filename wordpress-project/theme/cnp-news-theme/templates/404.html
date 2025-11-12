@@ -1,0 +1,103 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"4rem","bottom":"6rem"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:4rem;padding-bottom:6rem">
+  
+  <!-- 404 Content -->
+  <!-- wp:group {"className":"error-404-content","style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"layout":{"type":"constrained","contentSize":"700px"}} -->
+  <div class="wp-block-group error-404-content" style="padding-top:3rem;padding-bottom:3rem">
+    
+    <!-- Error Number -->
+    <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"8rem","fontWeight":"700","lineHeight":"1"}},"textColor":"muted"} -->
+    <h1 class="wp-block-heading has-text-align-center has-muted-color has-text-color" style="font-size:8rem;font-weight:700;line-height:1">404</h1>
+    <!-- /wp:heading -->
+    
+    <!-- Error Message -->
+    <!-- wp:heading {"textAlign":"center","level":2,"className":"error-title"} -->
+    <h2 class="wp-block-heading has-text-align-center error-title">Page Not Found</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
+    <p class="has-text-align-center has-medium-font-size">Sorry, the page you're looking for doesn't exist or has been moved.</p>
+    <!-- /wp:paragraph -->
+    
+    <!-- wp:spacer {"height":"2rem"} -->
+    <div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+    <!-- /wp:spacer -->
+    
+    <!-- Search Box -->
+    <!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}},"layout":{"type":"constrained","contentSize":"500px"}} -->
+    <div class="wp-block-group" style="padding-top:2rem;padding-bottom:2rem">
+      <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"large"} -->
+      <h3 class="wp-block-heading has-text-align-center has-large-font-size">Try Searching</h3>
+      <!-- /wp:heading -->
+      
+      <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search CNP News...","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"8px"}}} /-->
+    </div>
+    <!-- /wp:group -->
+    
+    <!-- wp:separator {"style":{"spacing":{"margin":{"top":"2rem","bottom":"2rem"}}},"className":"is-style-wide"} -->
+    <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" style="margin-top:2rem;margin-bottom:2rem"/>
+    <!-- /wp:separator -->
+    
+    <!-- Quick Actions -->
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"large"} -->
+    <h3 class="wp-block-heading has-text-align-center has-large-font-size">Popular Pages</h3>
+    <!-- /wp:heading -->
+    
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","orientation":"vertical"}} -->
+    <div class="wp-block-buttons">
+      <!-- wp:button {"width":50} -->
+      <div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link wp-element-button" href="/">🏠 Homepage</a></div>
+      <!-- /wp:button -->
+      
+      <!-- wp:button {"width":50} -->
+      <div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link wp-element-button" href="/category/artificial-intelligence">🤖 AI News</a></div>
+      <!-- /wp:button -->
+      
+      <!-- wp:button {"width":50} -->
+      <div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link wp-element-button" href="/category/startups-capital">🚀 Startups</a></div>
+      <!-- /wp:button -->
+      
+      <!-- wp:button {"width":50} -->
+      <div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link wp-element-button" href="/category/reviews-tools">⭐ Reviews</a></div>
+      <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+    
+    <!-- wp:spacer {"height":"3rem"} -->
+    <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>
+    <!-- /wp:spacer -->
+    
+    <!-- Latest Posts -->
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"large"} -->
+    <h3 class="wp-block-heading has-text-align-center has-large-font-size">Latest Articles</h3>
+    <!-- /wp:heading -->
+    
+    <!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false}} -->
+    <div class="wp-block-query">
+      <!-- wp:post-template {"style":{"spacing":{"blockGap":"1.5rem"}}} -->
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"},"blockGap":"0.75rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group" style="padding-top:1rem;padding-bottom:1rem">
+          <!-- wp:post-featured-image {"isLink":true,"width":"100px","height":"75px","style":{"border":{"radius":"6px"}}} /-->
+          
+          <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
+          <div class="wp-block-group">
+            <!-- wp:post-title {"isLink":true,"level":4,"fontSize":"medium"} /-->
+            <!-- wp:post-date {"format":"M j, Y","fontSize":"small","style":{"color":{"text":"var(--wp--preset--color--muted)"}}} /-->
+          </div>
+          <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+      <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+    
+  </div>
+  <!-- /wp:group -->
+  
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+

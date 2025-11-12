@@ -1,0 +1,135 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"2rem","bottom":"4rem"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:2rem;padding-bottom:4rem">
+  
+  <!-- Hero Section: 1 Large + 4 Medium -->
+  <!-- wp:group {"className":"hero-rail","style":{"spacing":{"margin":{"bottom":"3rem"}}},"layout":{"type":"default"}} -->
+  <div class="wp-block-group hero-rail" style="margin-bottom:3rem">
+    
+    <!-- Featured Large Post -->
+    <!-- wp:query {"queryId":1,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"only","inherit":false},"className":"feature-large-query"} -->
+    <div class="wp-block-query feature-large-query">
+      <!-- wp:post-template {"className":"feature-large"} -->
+        <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9"} /-->
+        <!-- wp:post-terms {"term":"category","className":"category-badge"} /-->
+        <!-- wp:post-title {"isLink":true,"level":1,"className":"feature-title"} /-->
+        <!-- wp:post-excerpt {"moreText":"Continue reading","excerptLength":30} /-->
+        <!-- wp:group {"style":{"spacing":{"margin":{"top":"1rem"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group" style="margin-top:1rem">
+          <!-- wp:post-author {"showAvatar":false,"byline":"By"} /-->
+          <!-- wp:post-date {"format":"M j, Y"} /-->
+        </div>
+        <!-- /wp:group -->
+      <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+    
+    <!-- Medium Posts Grid -->
+    <!-- wp:query {"queryId":2,"query":{"perPage":4,"pages":0,"offset":1,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"feature-medium-query"} -->
+    <div class="wp-block-query feature-medium-query">
+      <!-- wp:post-template {"className":"feature-grid"} -->
+        <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3"} /-->
+        <!-- wp:post-terms {"term":"category","className":"category-badge-sm"} /-->
+        <!-- wp:post-title {"isLink":true,"level":3,"className":"card-title"} /-->
+        <!-- wp:post-date {"format":"M j, Y","className":"card-date"} /-->
+      <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+    
+  </div>
+  <!-- /wp:group -->
+  
+  <!-- Breaking News Section -->
+  <!-- wp:group {"className":"breaking-news-section","style":{"spacing":{"margin":{"bottom":"3rem"},"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"8px"}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
+  <div class="wp-block-group breaking-news-section has-surface-background-color has-background" style="border-radius:8px;margin-bottom:3rem;padding-top:1.5rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
+    <!-- wp:heading {"level":2,"className":"breaking-label"} -->
+    <h2 class="wp-block-heading breaking-label">🔴 BREAKING</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:query {"queryId":3,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","categoryName":"breaking"}} -->
+    <div class="wp-block-query">
+      <!-- wp:post-template -->
+        <!-- wp:post-title {"isLink":true,"level":3} /-->
+      <!-- /wp:post-template -->
+      
+      <!-- wp:query-no-results -->
+        <!-- wp:paragraph -->
+        <p>No breaking news at the moment.</p>
+        <!-- /wp:paragraph -->
+      <!-- /wp:query-no-results -->
+    </div>
+    <!-- /wp:query -->
+  </div>
+  <!-- /wp:group -->
+  
+  <!-- Latest Articles Section -->
+  <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"3rem"}}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group" style="margin-bottom:3rem">
+    <!-- wp:heading {"level":2,"className":"section-title"} -->
+    <h2 class="wp-block-heading section-title">Latest News</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:query {"queryId":4,"query":{"perPage":9,"pages":0,"offset":5,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false}} -->
+    <div class="wp-block-query">
+      <!-- wp:post-template {"className":"articles-grid"} -->
+        <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3"} /-->
+        <!-- wp:post-terms {"term":"category","className":"category-badge-sm"} /-->
+        <!-- wp:post-title {"isLink":true,"level":3} /-->
+        <!-- wp:post-excerpt {"excerptLength":20} /-->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group">
+          <!-- wp:post-author {"showAvatar":false} /-->
+          <!-- wp:post-date {"format":"M j, Y"} /-->
+        </div>
+        <!-- /wp:group -->
+      <!-- /wp:post-template -->
+      
+      <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+      <div class="wp-block-query-pagination">
+        <!-- wp:query-pagination-previous {"label":"← Previous"} /-->
+        <!-- wp:query-pagination-numbers /-->
+        <!-- wp:query-pagination-next {"label":"Next →"} /-->
+      </div>
+      <!-- /wp:query-pagination -->
+      
+      <!-- wp:query-no-results -->
+        <!-- wp:paragraph {"align":"center"} -->
+        <p class="has-text-align-center">No posts found.</p>
+        <!-- /wp:paragraph -->
+      <!-- /wp:query-no-results -->
+    </div>
+    <!-- /wp:query -->
+  </div>
+  <!-- /wp:group -->
+  
+  <!-- Newsletter CTA -->
+  <!-- wp:group {"className":"newsletter-section","style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem","left":"2rem","right":"2rem"}},"border":{"radius":"12px"}},"backgroundColor":"primary","textColor":"background","layout":{"type":"constrained","contentSize":"600px"}} -->
+  <div class="wp-block-group newsletter-section has-background-color has-primary-background-color has-text-color has-background" style="border-radius:12px;padding-top:3rem;padding-right:2rem;padding-bottom:3rem;padding-left:2rem">
+    <!-- wp:heading {"textAlign":"center","level":2,"textColor":"background"} -->
+    <h2 class="wp-block-heading has-text-align-center has-background-color has-text-color">Stay Updated</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:paragraph {"align":"center","textColor":"background"} -->
+    <p class="has-text-align-center has-background-color has-text-color">Get the latest tech business news and analysis delivered to your inbox weekly.</p>
+    <!-- /wp:paragraph -->
+    
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-buttons">
+      <!-- wp:button {"backgroundColor":"background","textColor":"primary","className":"newsletter-button"} -->
+      <div class="wp-block-button newsletter-button"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button" href="#newsletter">Subscribe</a></div>
+      <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+    
+    <!-- wp:paragraph {"align":"center","fontSize":"small","textColor":"background"} -->
+    <p class="has-text-align-center has-background-color has-small-font-size has-text-color">No spam. Unsubscribe anytime. Read our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
+  
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+

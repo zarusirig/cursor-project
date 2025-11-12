@@ -1,0 +1,61 @@
+<?php
+// CNP SEO Sitemap Index
+define('WP_USE_THEMES', false);
+require_once('wp-load.php');
+
+// Check if sitemaps are enabled
+$opts = get_option('cnp_seo_settings', []);
+if (empty($opts['sitemaps_enabled'])) {
+  status_header(404);
+  exit;
+}
+
+// Set headers
+header('Content-Type: application/xml; charset=utf-8');
+header('Cache-Control: public, max-age=' . ($opts['sitemap_cache_ttl'] ?? 600));
+
+// Generate sitemap index
+echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+echo '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+$sitemaps = [];
+
+// Posts
+if (!empty($opts['sitemap_posts_enabled'])) {
+  $pages = ceil(wp_count_posts('post')->publish / ($opts['sitemap_max_urls'] ?? 2000));
+  for ($i = 1; $i <= $pages; $i++) {
+    $sitemaps[] = [
+      'loc' => home_url("/sitemap-posts-{$i}.xml"),
+      'lastmod' => gmdate('c')
+    ];
+  }
+}
+
+// Pages
+if (!empty($opts['sitemap_pages_enabled'])) {
+  $pages = ceil(wp_count_posts('page')->publish / ($opts['sitemap_max_urls'] ?? 2000));
+  for ($i = 1; $i <= $pages; $i++) {
+    $sitemaps[] = [
+      'loc' => home_url("/sitemap-pages-{$i}.xml"),
+      'lastmod' => gmdate('c')
+    ];
+  }
+}
+
+// Categories, Tags, Authors, Images - simplified for now
+if (!empty($opts['sitemap_categories_enabled'])) {
+  $sitemaps[] = [
+    'loc' => home_url('/sitemap-categories-1.xml'),
+    'lastmod' => gmdate('c')
+  ];
+}
+
+foreach ($sitemaps as $sitemap) {
+  echo "\t<sitemap>\n";
+  echo "\t\t<loc>" . esc_url($sitemap['loc']) . "</loc>\n";
+  echo "\t\t<lastmod>" . $sitemap['lastmod'] . "</lastmod>\n";
+  echo "\t</sitemap>\n";
+}
+
+echo '</sitemapindex>' . "\n";
+?>

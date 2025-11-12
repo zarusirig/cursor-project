@@ -50,6 +50,20 @@
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|sm"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"},"className":"cnp-nav-right"} -->
             <div class="wp-block-group cnp-nav-right" style="gap:var(--wp--preset--spacing--sm)">
 
+                <!-- wp:html -->
+                <button class="cnp-mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu">
+                    <svg class="cnp-menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                    <svg class="cnp-close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+                <!-- /wp:html -->
+
                 <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search CNP News...","width":250,"widthUnit":"px","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"className":"cnp-search"} /-->
 
                 <!-- wp:html -->
@@ -73,10 +87,71 @@
             
         </div>
         <!-- /wp:group -->
-        
+
     </div>
     <!-- /wp:group -->
-    
+
+    <!-- wp:html -->
+    <!-- Mobile Navigation Drawer -->
+    <nav id="mobile-navigation" class="cnp-mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+        <div class="cnp-mobile-nav-content">
+
+            <!-- Primary Navigation -->
+            <div class="cnp-mobile-nav-section">
+                <h2 class="cnp-mobile-nav-heading">Categories</h2>
+                <ul class="cnp-mobile-nav-list">
+                    <li><a href="/category/strategy-analysis">Strategy & Analysis</a></li>
+                    <li><a href="/category/artificial-intelligence">Artificial Intelligence</a></li>
+                    <li><a href="/category/startups-capital">Startups & Capital</a></li>
+                    <li><a href="/category/policy-regulation">Policy & Regulation</a></li>
+                    <li><a href="/category/fintech-markets">Fintech & Markets</a></li>
+                    <li><a href="/category/reviews-tools">Reviews & Tools</a></li>
+                    <li><a href="/category/technology">Technology</a></li>
+                    <li><a href="/category/markets">Markets</a></li>
+                </ul>
+            </div>
+
+            <!-- Pillar Hubs -->
+            <div class="cnp-mobile-nav-section">
+                <h2 class="cnp-mobile-nav-heading">Pillar Hubs</h2>
+                <ul class="cnp-mobile-nav-list">
+                    <li><a href="/hub/cybersecurity">Cybersecurity Hub</a></li>
+                    <li><a href="/hub/careers">Career Hub</a></li>
+                    <li><a href="/hub/learning">Learning Hub</a></li>
+                    <li><a href="/hub/innovation">Innovation Hub</a></li>
+                </ul>
+            </div>
+
+            <!-- Secondary Links -->
+            <div class="cnp-mobile-nav-section">
+                <h2 class="cnp-mobile-nav-heading">More</h2>
+                <ul class="cnp-mobile-nav-list">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/editorial-policy">Editorial Policy</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/newsletter">Newsletter</a></li>
+                </ul>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="cnp-mobile-nav-footer">
+                <button class="cnp-mobile-theme-toggle" aria-label="Toggle dark mode">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                    </svg>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="cnp-mobile-nav-overlay" aria-hidden="true"></div>
+    <!-- /wp:html -->
+
 </div>
 <!-- /wp:group -->
 

@@ -40,28 +40,12 @@
   </div>
   <!-- /wp:group -->
   
-  <!-- Breaking News Section -->
-  <!-- wp:group {"className":"breaking-news-section","style":{"spacing":{"margin":{"bottom":"3rem"},"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"8px"}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-  <div class="wp-block-group breaking-news-section has-surface-background-color has-background" style="border-radius:8px;margin-bottom:3rem;padding-top:1.5rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
-    <!-- wp:heading {"level":2,"className":"breaking-label"} -->
-    <h2 class="wp-block-heading breaking-label">🔴 BREAKING</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:query {"queryId":3,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","categoryName":"breaking"}} -->
-    <div class="wp-block-query">
-      <!-- wp:post-template -->
-        <!-- wp:post-title {"isLink":true,"level":3} /-->
-      <!-- /wp:post-template -->
-      
-      <!-- wp:query-no-results -->
-        <!-- wp:paragraph -->
-        <p>No breaking news at the moment.</p>
-        <!-- /wp:paragraph -->
-      <!-- /wp:query-no-results -->
-    </div>
-    <!-- /wp:query -->
-  </div>
-  <!-- /wp:group -->
+  <!-- Breaking News Section (Dynamic) -->
+  <?php
+  if (function_exists('cnp_display_breaking_news')) {
+      cnp_display_breaking_news();
+  }
+  ?>
   
   <!-- Latest Articles Section -->
   <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"3rem"}}},"layout":{"type":"constrained"}} -->

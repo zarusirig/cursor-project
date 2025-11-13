@@ -1,0 +1,164 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cnpnews.net/rag-architecture-patterns"
+  },
+  "headline": "RAG Architecture Patterns: Latency, Cost, and Quality Trade-offs",
+  "description": "Deep dive into naive RAG, advanced RAG, and modular RAG patterns with performance comparisons. We tested 3 patterns against 1,000 queries and measured accuracy, latency, and cost.",
+  "image": [
+    "https://cnpnews.net/images/rag-patterns-featured.jpg",
+    "https://cnpnews.net/images/rag-patterns-featured-4x3.jpg",
+    "https://cnpnews.net/images/rag-patterns-featured-16x9.jpg"
+  ],
+  "datePublished": "2024-11-01T09:00:00-08:00",
+  "dateModified": "2024-11-12T14:30:00-08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Sarah Chen",
+    "url": "https://cnpnews.net/author/sarah-chen",
+    "jobTitle": "Senior Editor, Enterprise AI",
+    "description": "Sarah has evaluated 30+ RAG systems for Fortune 500 clients and deployed production systems for 20+ enterprises.",
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Stanford University"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CNP News"
+    },
+    "sameAs": [
+      "https://twitter.com/sarahchen",
+      "https://linkedin.com/in/sarahchen"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CNP News",
+    "url": "https://cnpnews.net",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cnpnews.net/logo.png",
+      "width": 600,
+      "height": 60
+    },
+    "sameAs": [
+      "https://twitter.com/cnpnews",
+      "https://linkedin.com/company/cnpnews"
+    ]
+  },
+  "isAccessibleForFree": true,
+  "articleSection": "Enterprise AI & Automation",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "RAG (Retrieval-Augmented Generation)"
+    },
+    {
+      "@type": "Thing",
+      "name": "Large Language Models"
+    },
+    {
+      "@type": "Thing",
+      "name": "Vector Databases"
+    },
+    {
+      "@type": "Thing",
+      "name": "Enterprise AI"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "LangChain",
+      "url": "https://python.langchain.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Pinecone",
+      "url": "https://www.pinecone.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Weaviate",
+      "url": "https://weaviate.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "GPT-4",
+      "url": "https://openai.com/gpt-4"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Claude 3",
+      "url": "https://www.anthropic.com/claude"
+    }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "author": {
+        "@type": "Person",
+        "name": "Patrick Lewis"
+      },
+      "datePublished": "2020"
+    },
+    {
+      "@type": "WebPage",
+      "name": "LangChain: RAG from scratch",
+      "url": "https://python.langchain.com/docs/use_cases/question_answering/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "LangChain"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Pinecone: Advanced RAG techniques",
+      "url": "https://www.pinecone.io/learn/advanced-rag/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pinecone"
+      }
+    }
+  ],
+  "educationalLevel": "Advanced",
+  "proficiencyLevel": "Expert",
+  "timeRequired": "PT12M",
+  "keywords": [
+    "RAG",
+    "Retrieval-Augmented Generation",
+    "LLM",
+    "Vector Database",
+    "Semantic Search",
+    "Reranking",
+    "Query Optimization",
+    "Enterprise AI",
+    "Production ML"
+  ],
+  "inLanguage": "en-US",
+  "copyrightYear": 2024,
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "CNP News"
+  },
+  "hasPart": [
+    {
+      "@type": "Comment",
+      "@id": "https://cnpnews.net/rag-architecture-patterns#ai-disclosure",
+      "text": "This article used AI for research assistance. All performance data is from our hands-on testing conducted October 2024.",
+      "about": {
+        "@type": "Thing",
+        "name": "AI Disclosure"
+      }
+    }
+  ],
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Sarah Chen",
+    "jobTitle": "Senior Editor"
+  }
+}

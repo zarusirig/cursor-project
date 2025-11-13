@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "LangSmith",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "99",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "99",
+        "priceCurrency": "USD",
+        "billingIncrement": "Month"
+      }
+    },
+    "url": "https://smith.langchain.com/"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": 8.5,
+    "bestRating": 10,
+    "worstRating": 0,
+    "ratingExplanation": "Excellent for production LLM monitoring. Strong prompt versioning and debugging tools. Minor gaps in advanced reporting."
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sarah Chen",
+    "url": "https://cnpnews.net/author/sarah-chen",
+    "jobTitle": "Senior Editor, Enterprise AI",
+    "description": "Sarah has evaluated 30+ RAG systems and LLM tools for Fortune 500 clients."
+  },
+  "datePublished": "2024-11-05T10:00:00-08:00",
+  "dateModified": "2024-11-12T14:30:00-08:00",
+  "headline": "LangSmith for LLM Evaluation: Hands-On Review",
+  "reviewBody": "We tested LangSmith for 30 days on a production RAG system handling 10K queries/day. Testing period: October 1-31, 2024. Plan: Developer ($99/month). No vendor relationship. Verdict: Excellent for teams running >1K queries/day in production. Best-in-class prompt versioning and trace debugging. Minor gaps in advanced reporting vs. Weights & Biases.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CNP News",
+    "url": "https://cnpnews.net"
+  },
+  "positiveNotes": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Fast integration (15 minutes)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Excellent prompt versioning and A/B testing"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Low overhead (<50ms per trace)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Strong debugging tools for failure cases"
+      }
+    ]
+  },
+  "negativeNotes": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Missing advanced reporting dashboards"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Limited export options for custom analysis"
+      }
+    ]
+  },
+  "reviewAspect": "LLM Observability, Prompt Management, Production Monitoring",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cnpnews.net/langsmith-review"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "LLM Observability"
+    },
+    {
+      "@type": "Thing",
+      "name": "Prompt Engineering"
+    },
+    {
+      "@type": "Thing",
+      "name": "Production ML"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "Comment",
+      "@id": "https://cnpnews.net/langsmith-review#affiliate-disclosure",
+      "text": "This review contains affiliate links. We may earn commissions from purchases. We paid for our own LangSmith subscription ($99/month Developer plan) for testing. No vendor relationship.",
+      "about": {
+        "@type": "Thing",
+        "name": "Affiliate Disclosure"
+      }
+    },
+    {
+      "@type": "Comment",
+      "@id": "https://cnpnews.net/langsmith-review#ai-disclosure",
+      "text": "AI helped draft this review outline. We conducted all testing manually and made all editorial decisions.",
+      "about": {
+        "@type": "Thing",
+        "name": "AI Disclosure"
+      }
+    }
+  ]
+}

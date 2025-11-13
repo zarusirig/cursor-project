@@ -1,0 +1,412 @@
+/**
+ * CNP Auto Featured Images - Admin Styles
+ */
+
+.cnp-afi-wrap {
+    margin: 20px 20px 0 0;
+}
+
+.cnp-afi-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1280px) {
+    .cnp-afi-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cnp-afi-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cnp-afi-card h2,
+.cnp-afi-card h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Status Indicators */
+.cnp-afi-status {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #46b450;
+    font-weight: 600;
+}
+
+.cnp-afi-status .dashicons {
+    margin-right: 5px;
+}
+
+.cnp-afi-status.error {
+    color: #dc3232;
+}
+
+.cnp-afi-status.validating {
+    color: #0073aa;
+}
+
+/* Statistics */
+.cnp-afi-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cnp-afi-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+.cnp-afi-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2271b1;
+    margin-bottom: 5px;
+}
+
+.cnp-afi-stat-label {
+    font-size: 13px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Quick Actions */
+.cnp-afi-card .button {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.cnp-afi-card .button .dashicons {
+    margin-right: 5px;
+}
+
+/* Documentation Links */
+.cnp-afi-docs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cnp-afi-docs-list li {
+    margin-bottom: 10px;
+}
+
+.cnp-afi-docs-list a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f6f7f7;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.cnp-afi-docs-list a:hover {
+    background: #e8eaeb;
+}
+
+.cnp-afi-docs-list a::before {
+    content: "→";
+    margin-right: 10px;
+    color: #2271b1;
+}
+
+/* Bulk Generate Page */
+.cnp-afi-bulk-generate {
+    margin-top: 20px;
+}
+
+.cnp-afi-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+.cnp-afi-filters label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#posts-table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 15px 0;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+}
+
+.cnp-afi-posts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cnp-afi-posts-table th,
+.cnp-afi-posts-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.cnp-afi-posts-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cnp-afi-posts-table tr:hover {
+    background: #f9f9f9;
+}
+
+.cnp-afi-posts-table input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Progress Bar */
+.cnp-afi-progress-bar {
+    height: 30px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.cnp-afi-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2271b1, #0d5a8f);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#progress-text {
+    text-align: center;
+    font-size: 15px;
+    color: #646970;
+    margin: 10px 0;
+}
+
+#progress-log {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f6f7f7;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+#progress-log .log-entry {
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    border-left: 3px solid #ccc;
+}
+
+#progress-log .log-entry.success {
+    border-left-color: #46b450;
+    background: rgba(70, 180, 80, 0.1);
+}
+
+#progress-log .log-entry.error {
+    border-left-color: #dc3232;
+    background: rgba(220, 50, 50, 0.1);
+}
+
+#progress-log .log-entry.info {
+    border-left-color: #2271b1;
+    background: rgba(34, 113, 177, 0.1);
+}
+
+/* Status Badges */
+.cnp-afi-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cnp-afi-status-success {
+    background: #d7f8d7;
+    color: #2d6f2d;
+}
+
+.cnp-afi-status-error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.cnp-afi-status-processing {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Logs Table */
+.wp-list-table.cnp-afi-logs-table {
+    margin-top: 15px;
+}
+
+/* Loading State */
+.cnp-afi-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #646970;
+}
+
+.cnp-afi-loading::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2271b1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Disabled State */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Notices */
+.cnp-afi-notice {
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-left: 4px solid;
+    background: #fff;
+}
+
+.cnp-afi-notice.success {
+    border-left-color: #46b450;
+    background: #ecf7ed;
+}
+
+.cnp-afi-notice.error {
+    border-left-color: #dc3232;
+    background: #f8d7da;
+}
+
+.cnp-afi-notice.warning {
+    border-left-color: #f0ad4e;
+    background: #fff3cd;
+}
+
+.cnp-afi-notice.info {
+    border-left-color: #2271b1;
+    background: #d1ecf1;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .cnp-afi-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .cnp-afi-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cnp-afi-filters label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cnp-afi-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Form Improvements */
+.form-table th {
+    padding: 20px 10px 20px 0;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+#api_key {
+    font-family: 'Courier New', monospace;
+}
+
+/* Tooltip */
+.cnp-afi-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.cnp-afi-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.cnp-afi-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

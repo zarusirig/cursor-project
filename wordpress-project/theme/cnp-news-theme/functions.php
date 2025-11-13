@@ -440,7 +440,17 @@ function cnp_news_eeat_callback($post) {
     echo __('This article has been fact-checked', 'cnp-news') . '</label>';
     echo '</td>';
     echo '</tr>';
-    
+
+    // Breaking News
+    $is_breaking = get_post_meta($post->ID, '_cnp_is_breaking', true);
+    echo '<tr>';
+    echo '<th scope="row">' . __('Breaking News', 'cnp-news') . '</th>';
+    echo '<td>';
+    echo '<label><input type="checkbox" name="cnp_is_breaking" value="1"' . checked($is_breaking, 1, false) . '> ';
+    echo __('Mark as breaking news (shows in homepage alert)', 'cnp-news') . '</label>';
+    echo '</td>';
+    echo '</tr>';
+
     echo '</table>';
 }
 
@@ -476,11 +486,56 @@ function cnp_news_save_post_meta($post_id) {
     
     // Save AI assistance flag
     update_post_meta($post_id, '_cnp_ai_assistance', isset($_POST['cnp_ai_assistance']) ? 1 : 0);
-    
+
     // Save fact-checked flag
     update_post_meta($post_id, '_cnp_fact_checked', isset($_POST['cnp_fact_checked']) ? 1 : 0);
+
+    // Save breaking news flag
+    update_post_meta($post_id, '_cnp_is_breaking', isset($_POST['cnp_is_breaking']) ? 1 : 0);
 }
 add_action('save_post', 'cnp_news_save_post_meta');
+
+/**
+ * Display dynamic breaking news section
+ */
+function cnp_display_breaking_news() {
+    $breaking_args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 1,
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'meta_query' => array(
+            array(
+                'key' => '_cnp_is_breaking',
+                'value' => '1',
+                'compare' => '='
+            )
+        )
+    );
+
+    $breaking_query = new WP_Query($breaking_args);
+
+    if ($breaking_query->have_posts()) :
+        ?>
+        <div class="wp-block-group breaking-news-section has-surface-background-color has-background" style="border-radius:8px;margin-bottom:3rem;padding-top:1.5rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
+            <h2 class="wp-block-heading breaking-label">🔴 BREAKING</h2>
+            <?php while ($breaking_query->have_posts()) : $breaking_query->the_post(); ?>
+                <h3 class="wp-block-post-title" style="margin-top:0.5rem;margin-bottom:0.5rem">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
+                <div class="wp-block-post-excerpt" style="margin-top:0.5rem">
+                    <p><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
+                </div>
+                <div class="wp-block-post-date has-muted-color" style="font-size:0.875rem;margin-top:0.5rem">
+                    <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?>
+                </div>
+            <?php endwhile; ?>
+        </div>
+        <?php
+    endif;
+    wp_reset_postdata();
+}
 
 /**
  * Add structured data for articles

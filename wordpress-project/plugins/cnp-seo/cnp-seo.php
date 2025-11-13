@@ -43,7 +43,25 @@ register_activation_hook(__FILE__, function(){
 
     'site_desc_default' => '',
 
+    // Sitemap settings
+    'sitemaps_enabled' => 1,
+    'sitemap_posts_enabled' => 1,
+    'sitemap_pages_enabled' => 1,
+    'sitemap_categories_enabled' => 1,
+    'sitemap_tags_enabled' => 1,
+    'sitemap_authors_enabled' => 1,
+    'sitemap_images_enabled' => 0,
+    'sitemap_max_urls' => 2000,
+    'sitemap_cache_ttl' => 600,
+    'sitemap_excluded_paths' => '',
+    'sitemap_excluded_post_types' => [],
+    'sitemap_excluded_taxonomies' => [],
+
+    // News sitemap settings
     'news_sitemap_enabled' => 1,
+    'sitemap_news_window_hours' => 48,
+    'news_publication_name' => get_bloginfo('name'),
+    'news_publication_lang' => 'en',
 
     // Google News settings
     'gn_enabled' => 1,
@@ -60,6 +78,9 @@ register_activation_hook(__FILE__, function(){
     'gn_support_email' => '',
 
   ]);
+
+  // Flush rewrite rules to activate sitemap URLs
+  flush_rewrite_rules();
 
 });
 
